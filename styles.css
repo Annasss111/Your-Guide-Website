@@ -1,0 +1,951 @@
+/* Définir les variables de couleurs */
+:root {
+    --primary-color: #294B29; /* Vert */
+    --secondary-color: #A9CBA4; /* Vert clair */
+    --background-color: #F5F5DC; /* Beige */
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    background: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    overflow-x: auto;
+}
+
+/* Header Styles */
+.site-header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.site-header h1 {
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-info h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 0;
+}
+
+.contact-info a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Gallery Styles */
+h2 {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 1rem;
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Intro Section */
+.intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #fff;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section div {
+    flex: 1;
+    padding: 1rem;
+}
+
+.intro-section img {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Progress Section */
+.progress-section {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 1rem;
+}
+
+.progress {
+    height: 100%;
+    background: var(--secondary-color);
+    width: 10%;
+    transition: width 0.5s;
+}
+
+/* Reviews Section */
+.reviews-section {
+    padding: 2rem;
+    background: #fff;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.review-card {
+    flex: 1 1 300px;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.review-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    color: #FFD700;
+    margin: 0.5rem 0;
+}
+
+.author {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 0.5rem;
+}
+
+/* Submit Review Section */
+.submit-review-section {
+    padding: 2rem;
+    background: #fff;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.review-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.review-form label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select {
+    padding: 12px 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.5);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+    outline: none;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Scroll Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.scroll-top.show {
+    opacity: 1;
+}
+
+/* Video Section (index.php) */
+.video {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styles for Messages */
+.message.error {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.message.success {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.message.success h3 {
+    margin: 0 0 10px;
+    color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* Destination Section (Dynamic Pages in index.php) */
+.destination-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.destination-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.options-list li {
+    margin: 0.5rem 0;
+}
+
+.options-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.options-list a:hover {
+    text-decoration: underline;
+}
+
+/* Back Button (used in index.php, reservation.php, inscription.php, sign_in.php, contact.php) */
+.back-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reservation Hero Section (reservation.php) */
+.reservation-hero {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reservation-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-subtitle {
+    font-family: 'Lora', serif;
+    font-size: 1.3em;
+    animation: fadeInUp 1s ease-in-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero-subtitle span {
+    font-weight: 500;
+    color: #FFD700;
+}
+
+/* Reservation Section (reservation.php) */
+.reservation-section {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+}
+
+.reservation-content {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.5);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+    outline: none;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.submit-btn {
+    padding: 15px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sign-Up Hero Section (inscription.php) */
+.signup-hero {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signup-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+/* Sign-Up Section (inscription.php) */
+.signup-section {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+}
+
+.signup-content {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Sign-In Hero Section (sign_in.php) */
+.signin-hero {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signin-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+/* Sign-In Section (sign_in.php) */
+.signin-section {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+}
+
+.signin-content {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 0.8s ease-in-out;
+    text-align: center;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.signup-link {
+    margin-top: 1rem;
+    font-family: 'Lora', serif;
+    color: var(--primary-color);
+}
+
+.signup-link a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Hero Section (contact.php) */
+.contact-hero {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+/* Contact Section (contact.php) */
+.contact-section {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+}
+
+.contact-content {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-family: 'Lora', serif;
+}
+
+/* Admin Page Styles */
+.admin-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-form, .review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.admin-form input, .review-form textarea, .review-form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.admin-form button, .review-form button {
+    padding: 0.5rem;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-form button:hover, .review-form button:hover {
+    background-color: #45a049;
+}
+
+.destination-list, .review-list, .accepted-review-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.destination-item, .review-item, .accepted-review-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.destination-item img, .review-item img, .accepted-review-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.destination-overlay, .review-overlay, .accepted-review-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.destination-item:hover .destination-overlay, .review-item:hover .review-overlay, .accepted-review-item:hover .accepted-review-overlay {
+    transform: translateY(0);
+}
+
+.review-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.review-actions button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+}
+
+.accept-btn {
+    background-color: var(--success-color);
+}
+
+.reject-btn {
+    background-color: var(--error-color);
+}
+
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav li {
+        margin: 0.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-section img {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .reservation-hero,
+    .signup-hero,
+    .signin-hero,
+    .contact-hero {
+        height: 300px;
+    }
+
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+}
